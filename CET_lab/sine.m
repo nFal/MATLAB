@@ -1,0 +1,14 @@
+f=input('Enter the frequency of the sine wave ');
+x= 0:.001:5;
+z=sin(2*pi*f*x);
+y=cos(2*pi*f*x);
+subplot(1,2,1);
+plot(x,z);
+xlabel('Time');
+ylabel('Amplitude');
+title(['Sine wave of frequency f = ',num2str(f),'Hz']);
+subplot(1,2,2);
+plot(x,y);
+xlabel('Time');
+ylabel('Amplitude');
+title(['Cosine wave of frequency f = ',num2str(f),'Hz']);

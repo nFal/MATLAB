@@ -1,0 +1,27 @@
+pr=input('Enter the pass band ripple ');
+sr=input('Enter the stop band ripple ');
+pf=input('Enter the pass band frequency in Hz ');
+sf=input('Enter the stop band frequency in Hz ');
+Fs=input('Enter the sampling frequency in Hz ');
+w1=2*pf/Fs;
+w2=2*sf/Fs;
+[n,wn]=cheb1ord(w1,w2,pr,sr);
+[b,a]=cheby1(n,pr,wn);
+
+[h,f]=freqz(b,a,512,Fs);
+m=20*log10(abs(h));
+ang=angle(h);
+ang=ang*(180/pi);
+subplot(2,1,1);
+plot(f,m);
+title('Magnitude Response of the low pass filter:');
+xlabel('Frequency (Hz)');
+ylabel('Magnitude');
+grid on;
+subplot(2,1,2);
+plot(f,ang);
+title('Phase Response of the low pass filter:');
+xlabel('Frequency (Hz)');
+ylabel('Phase in degrees');
+grid on;
+gtext('Noufal P 13400043');

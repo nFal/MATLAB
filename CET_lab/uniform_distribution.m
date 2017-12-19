@@ -1,0 +1,13 @@
+a=input('enter a in [a,b] ');
+b=input('enter b in [a,b] ');
+n=rand(1,100000);
+x=a+(b-a).*n;
+subplot(211);
+stem(x);
+title('Numbers generated from uniform distribution');
+axis([0 100 0 10]);
+subplot(212);
+hist(x,10);
+title('Histogram of the numbers generated');
+axis([0 10 0 12000]);
+gtext('Noufal P 13400043');

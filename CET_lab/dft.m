@@ -1,0 +1,13 @@
+n=0:100001;
+fs=5000;
+ts=1/fs;
+f=1000;
+y=sin(2*pi*f*n*ts);
+subplot(311);
+plot(n,y);
+df=fft(y);
+subplot(312);
+n1=(fs/100002).*n;
+plot(n1,abs(df));
+subplot(313);
+plot(n1,angle(df));

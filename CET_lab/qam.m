@@ -1,0 +1,11 @@
+clc;
+clear all;
+m=input('input m for m-ary');
+snr=input('enter snr ');
+n=1000;
+x=randint(1,n,m);
+b=qammod(x,m);
+c=awgn(b,snr);
+scatterplot(b);
+hold on;
+scatterplot(c);

@@ -1,0 +1,17 @@
+y=input('Eenter the sequence y[n] ');
+a=input('Enter the time shift value ');
+l=length(y);
+x1=0:l-1;
+subplot(2,1,1);
+stem(x1,y);
+axis([-6 6 -6 6]);
+title('Original signal ');
+xlabel('n');
+ylabel('x[n]');
+x2=a:a+l-1;
+subplot(2,1,2);
+stem(x2,y);
+axis([-6 6 -6 6]);
+title(['Signal time shifted by ',num2str(a),' units']);
+xlabel('n');
+ylabel('x[n-a]');

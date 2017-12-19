@@ -1,0 +1,22 @@
+%continuous time multiplication
+f1=input('Enter the first sine frequency');
+f2=input('Enter the second sine frequency');
+x=0:.001:5;
+y1=sin(2*pi*f1*x);
+y2=sin(2*pi*f2*x);
+subplot(3,1,1);
+plot(x,y1);
+title(['First sine, f= ',num2str(f1),'Hz']);
+xlabel('Time(t)');
+ylabel('y1(t)');
+subplot(3,1,2);
+plot(x,y2);
+title(['Second sine, f= ',num2str(f2),'Hz']);
+xlabel('Time(t)');
+ylabel('y2(t)');
+z=y1.*y2;
+subplot(3,1,3);
+plot(x,z);
+title('sine1 x sine2');
+xlabel('Time(t)');
+ylabel('y1(t)*y2(t)');
